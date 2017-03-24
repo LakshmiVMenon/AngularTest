@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    </head>
+    <body>
+        <article>
+            <header id="header">
+                <div class="headerLogo">
+                    <a href="#"><img class="logo" src="../assets/images/logo.png"></a>
+                </div>
+                <div class="menu" id="mainmenu">
+                    <a (click)="headerMenu()"><img src="../assets/images/menu.png"></a>
+                </div>
+                <div class="headerList" id="headerDiv">
+                    <ul [className]="headerClass" id="headerNavs">
+                        <li><a href="#">HOME</a></li>
+                        <li><a class="active" href="#">LOGIN/REGISTER</a></li>
+                    </ul>
+                </div>
+            </header>
+            <div class="section">
+                <div class="welcomeSection">
+                    <h1>Welcome Back</h1>
+                    <h3>Changing the way people feel about dentistry</h3>
+                </div>
+                
+                <div class="loginsection">
+                    <form id="loginform" (ngSubmit)="login()" #loginForm="ngForm">
+                        <div class="form-group">
+                            <input type="text" id="uname" class="form-control" [(ngModel)]="user.username"  name="username" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="pwd" class="form-control" [(ngModel)]="user.password" name="password" placeholder="Password">
+                        </div>
+                        
+                        <div>
+
+                        <input type="submit" id="loginsubmit" name="submitlogin" value="LOGIN">
+
+                        </div>
+                        <div id="loginerror">{{errorMsg}}</div>
+                    </form>
+                    <div class="forgotpwddiv">
+                        <a href="#" class="forgotpwd">Forgot Password?</a></div>
+                </div>
+                
+                <div>
+                    <div class="registersection">Don’t have an account yet? <a class="register" href="#">REGISTER</a></div>
+                    
+                    <div class="guestsection">
+                        <h2>Hi there!</h2>
+                        <h4>don’t need to signin? get connected as</h4>
+                        
+                        <input type="button" id="guestsubmit" name="gsubmit" value="GUEST">
+                    </div>
+                </div>
+            
+            </div>
+            <footer id="footer">
+                <div class="footertextblock">
+                    <div class="footertext">
+                        <div class="text1">DENTAL.io © 2015 All Rights Reserved</div>
+                        <div class="text2"> <a class="terms" href="#">TERMS OF USE</a> and <a class="pricaypolicy" href="#">PRIVACY POLICY</a> | Designed by <a class="designed" href="#">PIXELSPOTSTUDIO.COM</a></div>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </body>
+</html>
